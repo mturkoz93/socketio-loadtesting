@@ -2,7 +2,7 @@
 language: node_js
 # Aynı zamanda Travis’e kullandığınız dilin versiyonunu belirtmelisiniz
 node_js:
-  - “stable”
+  - 8
 deploy:
   # Deploy işlemi için kullandığınız platformun ismi
   provider: heroku
