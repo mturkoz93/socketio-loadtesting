@@ -265,18 +265,18 @@ $(function() {
     });
   
     socket.on('disconnect', () => {
-      console.log('you have been disconnected');
+      log('you have been disconnected');
     });
   
     socket.on('reconnect', () => {
-      console.log('you have been reconnected');
+      log('you have been reconnected');
       if (username) {
         socket.emit('add user', username);
       }
     });
   
     socket.on('reconnect_error', () => {
-      console.log('attempt to reconnect has failed');
+      log('attempt to reconnect has failed');
     });
   
 });
