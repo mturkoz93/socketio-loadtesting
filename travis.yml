@@ -1,0 +1,16 @@
+# Travis’e hangi dil ile yazdığınızı belirtmelisiniz
+language: node_js
+# Aynı zamanda Travis’e kullandığınız dilin versiyonunu belirtmelisiniz
+node_js:
+  - “stable”
+deploy:
+  # Deploy işlemi için kullandığınız platformun ismi
+  provider: heroku
+  # https://dashboard.heroku.com/account adresinden aldığınız API_KEY
+  api_key:
+    secure: API_KEY
+  # Heroku projesinin ismi
+  app: heroku_repo_ismi
+  on:
+    # Github reponuzun ismi
+    repo: github_repo_ismi

@@ -13,6 +13,8 @@ server.listen(port, () => {
 // load static front end site
 app.use(express.static(path.join(__dirname, 'public')));
 
+global.pid = process.pid
+
 // socket.io-server
 
 var numUsers = 0;
@@ -25,7 +27,7 @@ io.on('connection', (socket) => {
     // we tell the client to execute 'new message'
     socket.broadcast.emit('new message', {
       username: socket.username,
-      message: data
+      message: data + global.pid
     });
   });
 
